@@ -1,7 +1,4 @@
-# requirements.txt
 streamlit
+scikit-learn
 pandas
-# scikit-learn installation from the official GitHub repository
-git+https://github.com/scikit-learn/scikit-learn.git
-# scikit-surprise installation from the official GitHub repository
 git+https://github.com/NicolasHug/Surprise.git#egg=scikit-surprise
