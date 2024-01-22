@@ -23,8 +23,8 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 st.title("🎬 The WBSFLIX Movie Store")
 
 # Load Data from group_recommender.py
-movies_path = "data/movies.csv"
-ratings_path = "data/ratings.csv"
+movies_path = "movies.csv"
+ratings_path = "ratings.csv"
 movies_df = pd.read_csv(movies_path)
 ratings_df = pd.read_csv(ratings_path)
 ratings_df1 = ratings_df[['userId', 'movieId', 'rating']]
