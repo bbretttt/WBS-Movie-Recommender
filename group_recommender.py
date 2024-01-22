@@ -257,4 +257,19 @@ st.header('Hidden Treasures')
 
 # Filter movies with rating_count between 10 and 100 and sort by average_rating
 hidden_treasures = movies_df[(movies_df['rating_count'] >= 10) & (movies_df['rating_count'] <= 100)].sort_values(by='average_rating', ascending=False).head(10)
-st.write('Top 10 Hidden Treasures (Between 10 and 100 Ratings):', hidden_treasures[['title', 'average_rating', 'rating_count']])
+
+# Extract 'Year of Release' from 'title' column
+hidden_treasures['Year of Release'] = hidden_treasures['title'].str.extract(r'\((\d{4})\)')
+
+# Extract 'Genres' from 'genres' column (you can use your original code for this)
+hidden_treasures['Genres'] = hidden_treasures['genres'].str.split('|').str[:2].str.join(', ')
+
+# Select only the desired columns
+hidden_treasures = hidden_treasures[['title', 'Year of Release', 'Genres']]
+
+# Rename columns for consistency
+hidden_treasures = hidden_treasures.rename(columns={'title': 'Title'})
+
+st.write('Top 10 Hidden Treasures (Between 10 and 100 Ratings):')
+st.dataframe(hidden_treasures, hide_index=True, width=1000)
+
