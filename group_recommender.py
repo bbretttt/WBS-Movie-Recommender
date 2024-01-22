@@ -6,8 +6,8 @@ from surprise import Reader, Dataset, SVD
 
 
 # Load Data
-movies_path = "data/movies.csv"
-ratings_path = "data/ratings.csv"
+movies_path = "movies.csv"
+ratings_path = "ratings.csv"
 
 # Load the data into pandas DataFrames
 movies_df = pd.read_csv(movies_path)
