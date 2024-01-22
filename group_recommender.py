@@ -6,8 +6,8 @@ from surprise import Reader, Dataset, SVD
 
 
 # Load Data
-movies_path = "movies.csv"
-ratings_path = "ratings.csv"
+movies_path = "data/movies.csv"
+ratings_path = "data/ratings.csv"
 
 # Load the data into pandas DataFrames
 movies_df = pd.read_csv(movies_path)
@@ -29,6 +29,7 @@ full_train = data.build_full_trainset()
 # Number of recommendations
 n = 10
 
+##########################################################
 
 # Streamlit General Configuration
 st.set_page_config(
@@ -40,14 +41,17 @@ st.set_page_config(
 page_bg_img = '''
 <style>
     .stApp {
-    background-image: url("https://blog.filmustage.com/content/images/2023/08/Decoding-cinema---A-deep-dive-into-film-studies-and-its-language.png");
-    background-size: cover;
+        background-image: url("https://blog.filmustage.com/content/images/2023/08/Decoding-cinema---A-deep-dive-into-film-studies-and-its-language.png");
+        background-size: cover;
+    }
+    /* Add custom styles below */
+    .stApp, .stApp .css-1d391kg, .stApp .css-145kmo2, .stApp .css-xq1lnh-EmotionIconBase, .stApp .css-10trblm {
+        color: white; /* This will make the text color white */
     }
 </style>
 '''
 
 st.markdown(page_bg_img, unsafe_allow_html=True)
-
 
 # Header
 st.title("🎬 The WBSFLIX Movie Store")
