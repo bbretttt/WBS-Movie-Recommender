@@ -9,9 +9,9 @@ from sklearn.metrics.pairwise import cosine_similarity
 st.title('Movie Recommender System')
 
 # Load data
-movies_df = pd.read_csv('data/movies.csv')
-ratings_df = pd.read_csv('data/ratings.csv')
-tags_df = pd.read_csv('data/tags.csv')
+movies_df = pd.read_csv('movies.csv')
+ratings_df = pd.read_csv('ratings.csv')
+tags_df = pd.read_csv('tags.csv')
 
 
 ##########################################################
