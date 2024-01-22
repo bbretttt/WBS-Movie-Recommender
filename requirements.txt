@@ -1,4 +1,4 @@
 streamlit
 scikit-learn
 pandas
-git+https://github.com/NicolasHug/Surprise.git#egg=scikit-surprise
+surprise
