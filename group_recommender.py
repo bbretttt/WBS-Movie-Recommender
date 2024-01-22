@@ -89,9 +89,8 @@ ranked_movies_df = ranked_movies_df[['ranking', 'Title', 'Year of Release','Genr
 
 
 # Create a Streamlit app
-st.title('Movie Recommendations')
 
-st.header('Most Popular Top 10 Movies')
+st.header('Most Popular Films')
 
 # Display the DataFrame using the global theme settings (dark mode)
 st.dataframe(ranked_movies_df,hide_index=True,column_config={'ranking' : 'Ranking'}, width=1000)
@@ -153,9 +152,9 @@ def get_top_n_recommendations(chosen_movieId, n):
 
 
 # Create a Streamlit app
-st.header('Top10 movies for you based on your favorite movie')
+st.header('Love a film? Then you might love these too!')
 
-chosen_item = st.selectbox("Choose a favorite movie and we'll suggest your Top10:",
+chosen_item = st.selectbox("Choose a movie and we'll suggest similar titles",
              key='item-based',
              options=movies_df['title'].unique(),
              index=0,
@@ -213,7 +212,7 @@ st.header('Personalized Recommendations for You')
 user_ids = ratings_df['userId'].unique()
 
 if len(user_ids) > 0:
-    chosen_item = st.selectbox("Put in your User ID and we'll suggest your Top10 based on your preferences and similar choices made by users like you",
+    chosen_item = st.selectbox("Enter User ID",
         key='user-based',
         options=user_ids
     )
